@@ -121,3 +121,93 @@ function end(str, target) {
 }
 
 console.log(end("He has to give me a new name", "me"));
+
+// FCC
+// Repeat a string repeat a string
+// function repeat(str, num) {
+//     var final = "";
+//     for (var i = 0; i < num; i++) {
+//         final += str;
+//     }
+//     return final;
+// }
+// console.log(repeat("abc", 3));
+
+
+// Truncate a string
+// function truncate(str, num) {
+//     var desiredLength = num - 3;
+//     if(num <= 3) {
+//       return str.slice(0, num) + "...";
+//     }
+//     else if (num >= str.length) {
+//         return str;
+//     }
+//     return str.slice(0, desiredLength) + "...";
+// }
+
+// Chunky Monkey
+// function chunk(arr, size) {
+//     var chunkedArray = [];
+//     if (arr.length % size === 0) {
+//         var initial = 0;
+//         var ending = size;
+//         for (var i = 1; i <= arr.length / size; i++) {
+//             chunkedArray.push(arr.slice(initial, ending));
+//             initial += size, ending += size;
+//         }
+//     } else {
+//         var initial = 0;
+//         var ending = size;
+//         var endPoint;
+//         if (Math.floor(arr.length / size) > Math.floor(arr.length % size)) {
+//             endPoint = Math.floor((arr.length / size)) + Math.floor((arr.length % size ));
+//         } else {
+//             endPoint = Math.ceil(arr.length % size);
+//             console.log(endPoint);
+//         }
+//         for (var i = 1; i <= endPoint; i++) {
+//             chunkedArray.push(arr.slice(initial, ending));
+//             initial += size, ending += size;
+//         }
+//     }
+//     return chunkedArray;
+// }
+
+// console.log(chunk(["a", "b", "c", "d", "e", "f", "g" "e"], 2));
+// console.log(chunk([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3)); // --> [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 10]]
+
+
+//Slasher Flick
+// function slasher(arr, howMany) {
+//     if (howMany === 0) {
+//         return arr;
+//     }
+//     return arr.splice(howMany, arr.length - 1);
+// }
+
+// console.log(slasher([1, 2, 3], 0));
+
+// Mutations
+
+
+function mutation(arr) {
+    var firstElem = arr[0].toLowerCase().split("");
+    var secondElem = arr[1].toLowerCase().split("");
+    var isPresent = true;
+    for(var i = 0; i < secondElem.length; i++) {
+        if(firstElem.indexOf(secondElem[i]) == -1) {
+            isPresent = false;
+            break;
+        }
+    }
+    return isPresent;
+}
+
+
+console.log(mutation(["hello", "hey"])); //--> false
+console.log(mutation(["hello", "Hello"])); //--> true
+console.log(mutation(["Mary", "Army"])); //--> true
+console.log(mutation(["mary", "army"])); //--> true
+console.log(mutation(["mary", "aaaarmy"])); //--> true
+console.log(mutation(["Alien", "line"])); //--> true
