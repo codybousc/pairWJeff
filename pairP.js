@@ -211,3 +211,34 @@ console.log(mutation(["Mary", "Army"])); //--> true
 console.log(mutation(["mary", "army"])); //--> true
 console.log(mutation(["mary", "aaaarmy"])); //--> true
 console.log(mutation(["Alien", "line"])); //--> true
+
+
+function bouncer(arr) {
+    return arr.filter(function(elem) {
+        if (elem) {
+            return true;
+        }
+    })
+    // Don't show a false ID to this bouncer.
+}
+
+console.log(bouncer([7, "ate", "", false, 9]));
+
+function numberTest(value) {
+    return
+}
+
+function destroyer(arr) {
+    var result = [];
+    var args = [];
+    for(var i = 1; i < arguments.length; i++) {
+      args.push(arguments[i]);
+    }
+
+    return arr.filter(function(el) {
+        return args.indexOf(el) === -1;
+    });
+}
+
+
+console.log(destroyer([2, 3, 5, 2, 5, 3], 2));
