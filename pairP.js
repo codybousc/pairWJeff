@@ -242,3 +242,24 @@ function destroyer(arr) {
 
 
 console.log(destroyer([2, 3, 5, 2, 5, 3], 2));
+
+//Where do I belong
+function where(arr, num) {
+  arr.sort(function(a, b) {
+      return a - b;
+  })
+  for(var i = 0; i < arr.length; i++) {
+      if(num > arr[i] && num < arr[i + 1]) {
+          return arr.indexOf(arr[i + 1]);
+      }
+      else if(num === arr[i]) {
+          return arr.indexOf(arr[i]);
+      }
+      else if (num > arr[arr.length -1]) {
+          return arr.length;
+      }
+  }
+
+}
+console.log(where([10, 20, 30, 40, 50], 35)); // --> 3
+console.log(where([40, 60], 50)); // --> 1
