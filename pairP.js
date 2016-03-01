@@ -263,3 +263,19 @@ function where(arr, num) {
 }
 console.log(where([10, 20, 30, 40, 50], 35)); // --> 3
 console.log(where([40, 60], 50)); // --> 1
+
+Sum All In Range 
+
+function sumAll(arr) {
+    var sum = 0;
+    arr.sort(function(a, b) {
+        return a - b;
+    });
+
+    for (var i = arr[0]; i <= arr[1]; i++) {
+        sum += i;
+    }
+    return sum;
+}
+
+console.log(sumAll([1, 4])); // 10
