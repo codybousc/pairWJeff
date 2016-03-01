@@ -264,7 +264,7 @@ function where(arr, num) {
 console.log(where([10, 20, 30, 40, 50], 35)); // --> 3
 console.log(where([40, 60], 50)); // --> 1
 
-Sum All In Range 
+Sum All In Range
 
 function sumAll(arr) {
     var sum = 0;
@@ -279,3 +279,25 @@ function sumAll(arr) {
 }
 
 console.log(sumAll([1, 4])); // 10
+
+//Diff Between Two Arrays
+function diff(arr1, arr2) {
+    var resultArr = [];
+    arr2.filter(function(elem) {
+        console.log(elem);
+        if (arr1.indexOf(elem) === -1) {
+            console.log("ELEM: ", elem);
+            resultArr.push(elem);;
+        }
+    });
+
+    arr1.filter(function(elem) {
+        console.log(elem);
+        if(arr2.indexOf(elem) === -1) {
+            resultArr.push(elem);
+        }
+    });
+    return resultArr;
+}
+// [1, 1, 2, 2, 3, 3, 4, 5]
+console.log(diff([2, 1,  3, 5], [1, 3, 2,"Calf", 4, 5])); // --> 4
